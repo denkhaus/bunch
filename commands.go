@@ -320,7 +320,7 @@ fi
 
 if [[ -f "Bunchfile" && -d ".vendor" ]]; then
   WD=$(pwd)
-  PATH="$WD/.vendor/bin:$PATH" GOPATH="$WD/.vendor/" go $@
+  GOPATH="$WD/.vendor/" GOBIN="$GOPATH/bin" PATH="$GOBIN:$PATH"  go $@
 else
   go $@
 fi
